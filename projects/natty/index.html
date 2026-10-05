@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Natty: a local-first strength journal built by Jamie Walker.">
+  <title>Natty / Jamie Walker</title>
+  <link rel="stylesheet" href="../../project.css">
+</head>
+<body>
+  <div class="project-page">
+    <nav class="project-nav" aria-label="Project navigation">
+      <a class="project-nav__brand" href="../../#logbook"><span class="project-nav__mark">JW</span><span>jamiewalker.uk</span></a>
+      <a class="project-nav__back" href="../../#logbook">Back to projects</a>
+    </nav>
+    <div class="project-shell">
+      <main class="project-main">
+        <header class="project-hero">
+          <div><p class="project-kicker">01 / Product</p><h1>Natty</h1></div>
+          <p class="project-hero__why">Workout logging is easy. Learning from it usually isn't. Natty keeps the routine quick and local, then uses the history to offer useful coaching when it has earned the interruption.</p>
+        </header>
+        <section class="project-section" aria-labelledby="approach-heading">
+          <p class="project-section__label">The approach</p>
+          <h2 id="approach-heading">Fast for the everyday action, thoughtful around everything else.</h2>
+          <p>Training data is recorded locally first, so a poor connection never gets between a person and their session. Private cloud backup adds continuity across devices, while the coaching layer is kept separate from the core journal.</p>
+        </section>
+        <section class="project-section" aria-labelledby="notes-heading">
+          <p class="project-section__label">Attached notes</p>
+          <h2 id="notes-heading">Decisions made along the way</h2>
+          <ol class="notes">
+            <li class="note"><time datetime="2026-09-18">18 Sep 2026</time><div><h3>Where local-first ends</h3><p>Kept workout capture on-device and treated Supabase as private backup, rather than making a network round trip part of every set.</p></div></li>
+            <li class="note"><time datetime="2026-08-30">30 Aug 2026</time><div><h3>Giving coaching a boundary</h3><p>Moved coaching behind an Azure endpoint so prompts, provider choices and safety rules can change without rebuilding the client.</p></div></li>
+            <li class="note"><time datetime="2026-08-12">12 Aug 2026</time><div><h3>One codebase, a useful web version</h3><p>Used Expo to keep mobile and web close enough to share the product, while accepting that each surface still needs its own care.</p></div></li>
+          </ol>
+        </section>
+      </main>
+      <aside class="project-aside" aria-label="Natty project details">
+        <div class="project-aside__status"><span>Status</span><span>Active</span></div>
+        <div class="project-actions">
+          <a class="project-action project-action--primary" href="https://purple-beach-0475dbd10.5.azurestaticapps.net">Open the app</a>
+          <a class="project-action" href="https://github.com/jamiewalker95/Natty">View source</a>
+        </div>
+        <dl class="project-meta">
+          <div><dt>Type</dt><dd>Mobile and web application</dd></div>
+          <div><dt>Built with</dt><dd>React Native, Expo, TypeScript</dd></div>
+          <div><dt>Data</dt><dd>Local-first with Supabase backup</dd></div>
+          <div><dt>Services</dt><dd>Azure Functions</dd></div>
+        </dl>
+        <section class="running-costs" aria-labelledby="costs-heading">
+          <h2 id="costs-heading">Running costs</h2>
+          <div class="running-costs__line"><span>Web app</span><strong>£0</strong></div>
+          <div class="running-costs__line"><span>Database and auth</span><strong>£0</strong></div>
+          <div class="running-costs__line"><span>AI coaching</span><strong>Usage-capped</strong></div>
+          <p class="running-costs__note">Azure Static Web Apps and Supabase are currently on their free plans. Azure AI is optional and pay as you go.</p>
+        </section>
+        <p class="project-aside__note">The public link opens the working web build. It may change as Natty moves from an experiment into a more settled product.</p>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>

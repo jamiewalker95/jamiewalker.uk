@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CourtWatcher: a Scottish court monitoring and summarisation service built by Jamie Walker.">
+  <title>CourtWatcher / Jamie Walker</title>
+  <link rel="stylesheet" href="../../project.css">
+</head>
+<body>
+  <div class="project-page">
+    <nav class="project-nav" aria-label="Project navigation">
+      <a class="project-nav__brand" href="../../#logbook"><span class="project-nav__mark">JW</span><span>jamiewalker.uk</span></a>
+      <a class="project-nav__back" href="../../#logbook">Back to projects</a>
+    </nav>
+    <div class="project-shell">
+      <main class="project-main">
+        <header class="project-hero">
+          <div><p class="project-kicker">02 / Automation</p><h1>CourtWatcher</h1></div>
+          <p class="project-hero__why">Published judgments shouldn't require a daily trawl. CourtWatcher finds new Court of Session opinions, keeps the original material close at hand and delivers a concise digest for review.</p>
+        </header>
+        <section class="project-section" aria-labelledby="approach-heading">
+          <p class="project-section__label">The approach</p>
+          <h2 id="approach-heading">Automate the repetitive work, preserve the route back to the source.</h2>
+          <p>A scheduled service checks for new opinions, downloads and records them, creates structured summaries and sends a Word digest by email. The register and source documents stay durable, so a generated summary never becomes the only record.</p>
+        </section>
+        <section class="project-section" aria-labelledby="notes-heading">
+          <p class="project-section__label">Attached notes</p>
+          <h2 id="notes-heading">What made it dependable</h2>
+          <ol class="notes">
+            <li class="note"><time datetime="2026-09-29">29 Sep 2026</time><div><h3>Measuring prompt improvements</h3><p>Tested seven prompt iterations against a fixed set of 37 opinions, recording misses rather than choosing examples that happened to look convincing.</p></div></li>
+            <li class="note"><time datetime="2026-09-15">15 Sep 2026</time><div><h3>Making state durable</h3><p>Used Azure Blob Storage for the register and downloaded opinions so scheduled runs remain repeatable and do not depend on one machine.</p></div></li>
+            <li class="note"><time datetime="2026-09-03">03 Sep 2026</time><div><h3>Treating delivery as part of the product</h3><p>Added Microsoft Graph delivery and a readable Word digest, because a good summary has little value if it does not reach the person expecting it.</p></div></li>
+          </ol>
+        </section>
+      </main>
+      <aside class="project-aside" aria-label="CourtWatcher project details">
+        <div class="project-aside__status"><span>Status</span><span>Active</span></div>
+        <div class="project-actions">
+          <a class="project-action" href="https://github.com/jamiewalker95/CourtWatcher">View source</a>
+        </div>
+        <dl class="project-meta">
+          <div><dt>Type</dt><dd>Scheduled monitoring service</dd></div>
+          <div><dt>Built with</dt><dd>Python, GitHub Actions</dd></div>
+          <div><dt>Data</dt><dd>Azure Blob Storage</dd></div>
+          <div><dt>Services</dt><dd>Azure OpenAI, Microsoft Graph</dd></div>
+          <div><dt>Evaluation</dt><dd>37 opinions, 91.4% holdout score</dd></div>
+        </dl>
+        <section class="running-costs" aria-labelledby="costs-heading">
+          <h2 id="costs-heading">Running costs</h2>
+          <div class="running-costs__line"><span>Scheduler</span><strong>Included allowance</strong></div>
+          <div class="running-costs__line"><span>Storage</span><strong>Usage-based</strong></div>
+          <div class="running-costs__line"><span>AI summaries</span><strong>Usage-based</strong></div>
+          <p class="running-costs__note">There is no always-on application host. Cost follows the number and length of opinions processed.</p>
+        </section>
+        <p class="project-aside__note">CourtWatcher has no public front end. This page documents the service and its decisions without pretending there is an app to click through to.</p>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>

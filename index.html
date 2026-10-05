@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jamie Walker, Lead Solutions Architect specialising in healthcare. Personal software projects, experiments and notes.">
+  <meta property="og:title" content="Jamie Walker / Project log">
+  <meta property="og:description" content="Personal software projects, experiments and the decisions behind them.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jamiewalker.uk">
+  <title>Jamie Walker / Project log</title>
+  <style>
+    :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #172033; background: #f3f5f7; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; min-width: 320px; }
+    a { color: inherit; }
+    .logbook { min-height: 100svh; }
+    .logbook__shell { min-height: 100svh; max-width: 1580px; margin: 0 auto; display: grid; grid-template-columns: 300px minmax(460px, 1fr) 320px; }
+    .logbook__intro { padding: 34px 30px; border-right: 1px solid #c7ccd4; display: flex; flex-direction: column; }
+    .logbook__brand { display: flex; align-items: center; gap: 12px; margin-bottom: 76px; font-size: .82rem; font-weight: 800; }
+    .logbook__monogram { width: 34px; height: 34px; display: grid; place-items: center; color: #fff; background: #1e55cc; }
+    .logbook__intro h1 { margin: 0 0 12px; font-size: 2.5rem; line-height: 1; }
+    .logbook__role { margin: 0 0 28px; color: #1e55cc; font-size: 1rem; font-weight: 720; line-height: 1.45; }
+    .logbook__hello { margin: 0; color: #4e586a; font-size: 1rem; line-height: 1.62; }
+    .logbook__intro nav { display: flex; flex-wrap: wrap; gap: 16px; margin-top: auto; padding-top: 44px; }
+    .logbook__intro nav a { color: inherit; font-size: .75rem; font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 4px; text-transform: uppercase; }
+    .logbook__feed { min-width: 0; background: #fff; }
+    .logbook__feedhead { height: 82px; padding: 0 34px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #c7ccd4; }
+    .logbook__feedhead h2, .logbook__sidehead h2 { margin: 0; font-size: 1.1rem; }
+    .logbook__feedhead span, .logbook__sidehead span { color: #6a7280; font-size: .75rem; text-transform: uppercase; }
+    .project-entry { padding: 30px 34px 32px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 26px; align-items: end; border-bottom: 1px solid #c7ccd4; }
+    .project-entry__meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; color: #697282; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .75rem; }
+    .project-entry__kind { padding: 4px 8px; color: #123c9b; background: #dce7ff; }
+    .project-entry:nth-of-type(3) .project-entry__kind { color: #8e2f22; background: #ffe0d9; }
+    .project-entry h3 { max-width: 760px; margin: 0 0 12px; font-family: Georgia, "Times New Roman", serif; font-size: 2rem; line-height: 1.15; font-weight: 400; }
+    .project-entry p { max-width: 760px; margin: 0 0 18px; color: #4f5969; font-size: 1rem; line-height: 1.55; }
+    .project-entry__facts { display: flex; flex-wrap: wrap; gap: 8px; }
+    .project-entry__facts span { padding: 6px 9px; border: 1px solid #c8ced7; color: #555f6e; font-size: .72rem; }
+    .project-entry__link { display: inline-flex; align-items: center; gap: 8px; padding-bottom: 3px; color: #173f9f; border-bottom: 1px solid currentColor; font-size: .78rem; font-weight: 800; text-decoration: none; text-transform: uppercase; white-space: nowrap; }
+    .project-entry__link::after { content: "\2192"; font-size: 1rem; }
+    .logbook__sidebar { padding: 0 26px 30px; border-left: 1px solid #c7ccd4; }
+    .logbook__sidehead { height: 82px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #c7ccd4; }
+    .idea-entry { padding: 22px 0; border-bottom: 1px solid #c7ccd4; }
+    .idea-entry__top { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 10px; }
+    .idea-entry h3 { margin: 0; font-size: 1.08rem; }
+    .idea-entry__status { color: #9a4e12; font-size: .7rem; font-weight: 800; text-transform: uppercase; }
+    .idea-entry p { margin: 0; color: #596273; font-size: .9rem; line-height: 1.5; }
+    @media (max-width: 900px) {
+      .logbook__shell { grid-template-columns: 250px minmax(0, 1fr); }
+      .logbook__sidebar { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; border-left: 0; border-top: 1px solid #c7ccd4; }
+      .logbook__sidehead { grid-column: 1 / -1; }
+    }
+    @media (max-width: 560px) {
+      .logbook__shell { display: block; }
+      .logbook__intro { min-height: 520px; padding: 28px 20px; border-right: 0; border-bottom: 1px solid #c7ccd4; }
+      .logbook__brand { margin-bottom: 66px; }
+      .logbook__intro h1 { font-size: 2.25rem; }
+      .logbook__feedhead { padding: 0 20px; }
+      .project-entry { display: block; padding: 26px 20px 28px; }
+      .project-entry h3 { font-size: 1.75rem; }
+      .project-entry__link { margin-top: 10px; }
+      .logbook__sidebar { display: block; padding: 0 20px 30px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <main class="logbook" id="logbook">
+    <div class="logbook__shell">
+      <aside class="logbook__intro">
+        <div class="logbook__brand"><span class="logbook__monogram">JW</span><span>jamiewalker.uk</span></div>
+        <h1>Jamie Walker</h1>
+        <p class="logbook__role">Lead Solutions Architect specialising in healthcare.</p>
+        <p class="logbook__hello">This is mostly where I keep track of personal projects, experiments and things I was curious enough to build. If you've landed here, feel free to have a nosey.</p>
+        <nav aria-label="Project log navigation"><a href="#projects">Projects</a><a href="#ideas">Ideas</a><a href="https://github.com/jamiewalker95">GitHub</a></nav>
+      </aside>
+      <section class="logbook__feed" id="projects" aria-labelledby="projects-heading">
+        <header class="logbook__feedhead"><h2 id="projects-heading">Latest projects</h2><span>Why they exist</span></header>
+        <article class="project-entry">
+          <div><div class="project-entry__meta"><span>01</span><span class="project-entry__kind">Product</span></div><h3>Workout logging is easy. Learning from it usually isn't.</h3><p>Natty started because most training apps are good at collecting sets and less useful when it comes to deciding what to do next. It keeps logging quick, then adds coaching only when it has something helpful to say.</p><div class="project-entry__facts"><span>Expo</span><span>Supabase</span><span>Azure Functions</span></div></div>
+          <a class="project-entry__link" href="projects/natty/">Read project</a>
+        </article>
+        <article class="project-entry">
+          <div><div class="project-entry__meta"><span>02</span><span class="project-entry__kind">Automation</span></div><h3>Published judgments shouldn't require a daily trawl.</h3><p>CourtWatcher monitors new Court of Session opinions and turns them into a dependable digest. I built it to explore whether careful automation could remove repetitive checking without hiding the source material.</p><div class="project-entry__facts"><span>Python</span><span>Azure OpenAI</span><span>Microsoft Graph</span></div></div>
+          <a class="project-entry__link" href="projects/courtwatcher/">Read project</a>
+        </article>
+      </section>
+      <aside class="logbook__sidebar" id="ideas">
+        <header class="logbook__sidehead"><h2>Idea diary</h2><span>Loose ends</span></header>
+        <article class="idea-entry"><div class="idea-entry__top"><h3>Alarm app</h3><span class="idea-entry__status">Thinking</span></div><p>An alarm that makes the first few minutes after waking feel deliberate, without turning the morning into a game or another dashboard.</p></article>
+        <article class="idea-entry"><div class="idea-entry__top"><h3>This site</h3><span class="idea-entry__status">Building</span></div><p>A useful home for project decisions, costs and the notes that would otherwise disappear into old folders.</p></article>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
+
