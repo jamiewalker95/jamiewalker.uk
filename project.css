@@ -44,7 +44,7 @@ a { color: inherit; }
 
 .notes { margin: 0; padding: 0; list-style: none; }
 .note { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 24px; padding: 23px 0; border-top: 1px solid #d7dbe1; }
-.note time { color: #697282; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .74rem; }
+.note time, .note__phase { color: #697282; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .74rem; }
 .note h3 { margin: 0 0 8px; font-size: 1rem; }
 .note p { margin: 0; color: #566071; font-size: .92rem; line-height: 1.55; }
 
