@@ -17,20 +17,22 @@
       <main class="project-main">
         <header class="project-hero">
           <div><p class="project-kicker">01 / Product</p><h1>Natty</h1></div>
-          <p class="project-hero__why">Workout logging is easy. Learning from it usually isn't. Natty keeps the routine quick and local, then uses the history to offer useful coaching when it has earned the interruption.</p>
+          <p class="project-hero__why">I was fed up copying workouts out of Notes or another app and pasting them into ChatGPT whenever I wanted useful advice. Natty brings the log, the history and the coaching together in one place.</p>
         </header>
         <section class="project-section" aria-labelledby="approach-heading">
           <p class="project-section__label">The approach</p>
           <h2 id="approach-heading">Fast for the everyday action, thoughtful around everything else.</h2>
           <p>Training data is recorded locally first, so a poor connection never gets between a person and their session. Private cloud backup adds continuity across devices, while the coaching layer is kept separate from the core journal.</p>
         </section>
-        <section class="project-section" aria-labelledby="notes-heading">
-          <p class="project-section__label">Attached notes</p>
-          <h2 id="notes-heading">Decisions made along the way</h2>
+        <section class="project-section" aria-labelledby="history-heading">
+          <p class="project-section__label">Feature history</p>
+          <h2 id="history-heading">How Natty has grown</h2>
           <ol class="notes">
-            <li class="note"><time datetime="2026-09-18">18 Sep 2026</time><div><h3>Where local-first ends</h3><p>Kept workout capture on-device and treated Supabase as private backup, rather than making a network round trip part of every set.</p></div></li>
-            <li class="note"><time datetime="2026-08-30">30 Aug 2026</time><div><h3>Giving coaching a boundary</h3><p>Moved coaching behind an Azure endpoint so prompts, provider choices and safety rules can change without rebuilding the client.</p></div></li>
-            <li class="note"><time datetime="2026-08-12">12 Aug 2026</time><div><h3>One codebase, a useful web version</h3><p>Used Expo to keep mobile and web close enough to share the product, while accepting that each surface still needs its own care.</p></div></li>
+            <li class="note"><time datetime="2026-09-29">29 Sep 2026</time><div><h3>Workout export and background recovery</h3><p>Added a portable workout export and made active sessions recover cleanly after the app has been left in the background.</p></div></li>
+            <li class="note"><time datetime="2026-09-16">16 Sep 2026</time><div><h3>Exercise guidance, cardio and better context</h3><p>Expanded the exercise library with searchable movements, muscle maps and form videos, added cardio tracking, and included workout notes in coaching feedback.</p></div></li>
+            <li class="note"><time datetime="2026-09-13">13 Sep 2026</time><div><h3>Personal progress and on-demand coaching</h3><p>Added progress views and workout controls, then connected workout and weekly reviews to an authenticated, usage-capped Azure AI endpoint.</p></div></li>
+            <li class="note"><time datetime="2026-09-12">12 Sep 2026</time><div><h3>Cloud backup without losing local-first</h3><p>Introduced private Supabase backup, password authentication, unfinished-workout autosave and the ability to edit saved sessions.</p></div></li>
+            <li class="note"><time datetime="2026-09-03">03 Sep 2026</time><div><h3>The first complete workout loop</h3><p>Shipped the local-first foundation: profile setup, live or manually timed workouts, history, personal bests, Natty Score, and the option to repeat a previous session.</p></div></li>
           </ol>
         </section>
       </main>
