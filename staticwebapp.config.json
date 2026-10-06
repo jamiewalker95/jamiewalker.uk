@@ -1,4 +1,12 @@
 {
+  "routes": [
+    {
+      "route": "/the-pink-lead/*",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow"
+      }
+    }
+  ],
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": ["/project.css", "/projects/*"]
@@ -9,4 +17,3 @@
     "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
   }
 }
-
